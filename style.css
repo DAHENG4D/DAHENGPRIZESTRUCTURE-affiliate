@@ -1,0 +1,437 @@
+/* Basic Reset & Fonts */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Light grey background for the page */
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif; /* Use Oswald for headings */
+    color: #1a237e; /* Dark blue for headings */
+}
+
+a {
+    text-decoration: none;
+    color: #1a237e;
+}
+
+    a:hover {
+        color: #3f51b5;
+    }
+
+/* --- Global Utilities --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #ffffff; /* Gold */
+    color: #1a237e; /* Dark blue */
+}
+
+    .btn-primary:hover {
+        background-color: #ffffff; /* Darker gold on hover */
+    }
+
+.section-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    .section-container h2 {
+        margin-bottom: 25px;
+        font-size: 2.5em;
+        color: #1a237e;
+    }
+
+/* --- Header & Navigation --- */
+.main-header {
+    background-color: #1a237e; /* Dark blue background */
+    color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 700;
+    color: #fafafa; /* Gold for brand name */
+}
+
+.nav-logo {
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    .nav-links li {
+        margin-left: 30px;
+    }
+
+        .nav-links a {
+            color: #ffffff;
+            font-weight: 400;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                background-color: #ffd700;
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+
+/* --- Hero Section --- */
+.hero {
+    background: url('https://via.placeholder.com/1500x500/1a237e/ffd700?text=DAHENG+4D+LOTTERY') no-repeat center center/cover; /* Placeholder image, replace with a real one */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 400px; /* Ensure hero section has a decent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+        z-index: -1;
+    }
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Results Section (Adjusted for Prize Structure) --- */
+.prize-table-container {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    /* Add this for horizontal scrolling on small screens */
+    overflow-x: auto; 
+}
+
+.prize-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1.1em;
+    /* Ensure the table itself doesn't shrink more than its content needs */
+    min-width: 600px; /* Adjust as needed to prevent content squeezing on small screens */
+}
+
+    .prize-table th, .prize-table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .prize-table th {
+        background-color: #1a237e;
+        color: #ffd700;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .prize-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .prize-table tr:hover {
+        background-color: #e0e0e0;
+    }
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #222;
+    color: #ffffff;
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+    .footer-col h3 {
+        color: #ffd700;
+        margin-bottom: 20px;
+        font-size: 1.4em;
+    }
+
+    .footer-col p, .footer-col ul {
+        font-size: 0.95em;
+        line-height: 1.6;
+        color: #e0e0e0;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+            .footer-col ul li a {
+                color: #e0e0e0;
+                transition: color 0.3s ease;
+            }
+
+                .footer-col ul li a:hover {
+                    color: #ffd700;
+                }
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+    .social-icons a:hover {
+        color: #ffd700;
+    }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.8em;
+    }
+
+    .nav-logo {
+        height: 35px;
+    }
+
+    .nav-links {
+        display: none; /* Hide by default on smaller screens */
+        flex-direction: column;
+        width: 100%;
+        background-color: #1a237e;
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+        .nav-links.active {
+            display: flex; /* Show when active */
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        }
+
+            .nav-links a {
+                padding: 10px 0;
+                display: block;
+            }
+
+    .hamburger {
+        display: flex; /* Show hamburger on smaller screens */
+    }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .section-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+        .section-container h2 {
+            font-size: 2em;
+        }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        margin: 15px 0;
+        text-align: center;
+        min-width: unset; /* Allow items to stack */
+        width: 100%;
+    }
+
+    /* Table adjustments */
+    .prize-table {
+        /* Allow table to be wider than its container and enable horizontal scrolling */
+        min-width: 500px; /* Adjust this value as needed to ensure content fits without excessive squeezing */
+        font-size: 0.9em; /* Reduce font size for readability on smaller screens */
+    }
+
+    .prize-table th,
+    .prize-table td {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .jackpot-item {
+        min-width: unset; /* Allow items to stack */
+        width: 100%;
+    }
+
+    .check-past-results .btn {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+
+    .nav-logo {
+        height: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .prize-table {
+        min-width: 400px; /* Further reduce min-width for very small screens if needed */
+        font-size: 0.8em; /* Further reduce font size */
+    }
+
+    .prize-table td,
+    .prize-table th {
+        padding: 6px 8px; /* Further reduce padding */
+    }
+}
